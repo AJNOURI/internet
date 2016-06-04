@@ -8,5 +8,5 @@ RUN apk add drill
 RUN apk add iputils
 RUN apk add bash
 RUN apk add dialog
-ADD iptables /data/iptables
+ADD nat.sh /data/nat.sh
 VOLUME /data
