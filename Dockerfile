@@ -10,3 +10,4 @@ RUN apk add bash
 RUN apk add dialog
 ADD nat.sh /data/nat.sh
 VOLUME /data
+CMD /data/nat.sh
