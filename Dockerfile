@@ -7,6 +7,7 @@ RUN apk add iproute2
 RUN apk add drill
 RUN apk add iputils
 RUN apk add bash
+RUN apk add tcpdump
 RUN apk add dialog
 ADD nat.sh /data/nat.sh
 VOLUME /data
