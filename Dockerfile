@@ -11,4 +11,3 @@ RUN apk add tcpdump
 RUN apk add dialog
 ADD nat.sh /data/nat.sh
 VOLUME /data
-CMD /data/nat.sh
