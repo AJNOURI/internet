@@ -1,7 +1,10 @@
 #!/bin/bash
 
-LAN="eth1"
-INT="eth0"
+echo -n "Enter the name of LAN interface and press [ENTER]: "
+read LAN
+
+echo -n "Enter the name of WAN interface and press [ENTER]: "
+read WAN
 
 iptables -F
 iptables -X
@@ -16,4 +19,5 @@ iptables -P OUTPUT ACCEPT
 iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
 iptables -A FORWARD -i $LAN -j ACCEPT
 iptables --t nat -F POSTROUTING
-iptables --t nat -A POSTROUTING -o $INT -j MASQUERADE
+iptables --t nat -A POSTROUTING -o $WAN -j MASQUERADE
+
