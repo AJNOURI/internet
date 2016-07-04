@@ -9,5 +9,7 @@ RUN apk add iputils
 RUN apk add bash
 RUN apk add tcpdump
 RUN apk add dialog
+RUN apk add --update dnsmasq && rm -rf /var/cache/apk/*
 ADD nat.sh /data/nat.sh
+VOLUME /etc/dnsmasq
 VOLUME /data
