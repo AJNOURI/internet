@@ -28,9 +28,6 @@ dhcp-range=$START,$END,12h
 EOF
 fi
 
-echo "Edit /etc/dnsmasq/dnsmaq.conf to change the configuration"
-dnsmasq --log-dhcp --no-daemon --conf-file=/etc/dnsmasq/dnsmaq.conf 
-
 iptables -F
 iptables -X
 iptables -t nat -F
@@ -46,3 +43,5 @@ iptables -A FORWARD -i $LAN -j ACCEPT
 iptables --t nat -F POSTROUTING
 iptables --t nat -A POSTROUTING -o $WAN -j MASQUERADE
 
+echo "Edit /etc/dnsmasq/dnsmaq.conf to change the configuration"
+dnsmasq --log-dhcp --no-daemon --conf-file=/etc/dnsmasq/dnsmaq.conf 
