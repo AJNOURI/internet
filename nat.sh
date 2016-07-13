@@ -10,14 +10,16 @@ cat > /etc/dnsmasq/dnsmaq.conf <<EOF
 bind-interfaces
 # Dynamic range of IPs to make available to LAN pc
 
-# First LAN interface 
+# First LAN interface
 interface=eth2
 dhcp-option=eth2,3,10.0.0.1
+dhcp-option=eth2,6,192.168.0.254
 dhcp-range=eth2,10.0.0.10,10.0.0.20,12h
 
 # Second LAN interface
 interface=eth0
 dhcp-option=eth0,3,11.0.0.1
+dhcp-option=eth0,6,192.168.0.254
 dhcp-range=eth0,11.0.0.10,11.0.0.20,12h
 
 EOF
