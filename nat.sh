@@ -24,11 +24,6 @@ dhcp-range=eth0,11.0.0.10,11.0.0.20,12h
 
 EOF
 
-
-echo "Edit /etc/dnsmasq/dnsmaq.conf to change the configuration"
-dnsmasq --log-dhcp --no-daemon --conf-file=/etc/dnsmasq/dnsmaq.conf 
-
-
 # NAT (masquerade) deployment
 iptables -F
 iptables -X
@@ -47,3 +42,9 @@ iptables --t nat -F POSTROUTING
 iptables -A FORWARD -i eth0 -o eth1 -j ACCEPT
 iptables -A FORWARD -i eth2 -o eth1 -j ACCEPT
 iptables --t nat -A POSTROUTING -o eth1 -j MASQUERADE
+
+echo "Edit /etc/dnsmasq/dnsmaq.conf to change the configuration"
+dnsmasq --log-dhcp --no-daemon --conf-file=/etc/dnsmasq/dnsmaq.conf 
+
+
+
