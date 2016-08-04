@@ -7,6 +7,9 @@ Configure /data/nat.sh according to your topology, then start it start dnsmasq f
 
 
 
+**Example of deployment:**  
+[GNS3 + Docker: Internet modem container](https://cciethebeginning.wordpress.com/2016/07/17/gns3-docker-internet-modem-container/) 
+![Topology](https://cciethebeginning.files.wordpress.com/2016/07/selection_115.png?w=630  "Topology")
 
 #### References:
 https://github.com/GNS3/gns3-registry/tree/master/docker/dhcp
