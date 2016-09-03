@@ -1,8 +1,10 @@
 #!/bin/bash
 
 dhcp(){                                                           
-        echo "Edit /etc/dnsmasq/dnsmaq.conf to change the configuration"   
-        dnsmasq --log-dhcp --conf-file=/etc/dnsmasq/dnsmaq.conf            
+  if pgrep dnsmasq >/dev/null 2>&1; then 
+    pkill dnsmasq
+  fi
+  dnsmasq --log-dhcp --conf-file=/etc/dnsmasq/dnsmaq.conf            
 }
 
 if [ ! -f /etc/dnsmasq/dnsmaq.conf ]; then
