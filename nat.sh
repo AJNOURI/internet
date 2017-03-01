@@ -18,7 +18,7 @@ if [ ! -f /etc/dnsmasq/dnsmaq.conf ]; then
   # Dynamic range of IPs to make available to LAN pc
   
   # First LAN interface
-  interface=ethi1
+  interface=eth1
   dhcp-option=eth1,3,192.168.114.100
   dhcp-option=eth1,6,8.8.8.8
   dhcp-range=eth1,192.168.114.10,192.168.114.20,12h
